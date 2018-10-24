@@ -32,7 +32,7 @@ function applicableTaxRate(location) {
     case "SK":
       return 0.1;
     default:
-      return "Location not available";
+      throw Erorr("Location not available");
   }
 }
 
@@ -45,8 +45,8 @@ function totalSale(sales) {
 function calculateTax(sales, taxRate) {
   return sales * taxRate;
 }
-
 // Main function
+
 function calculateSalesTax(salesData, taxRates) {
   let result = {};
 
@@ -70,8 +70,7 @@ function calculateSalesTax(salesData, taxRates) {
   }
   return result;
 }
-
-var results = calculateSalesTax(companySalesData, salesTaxRates);
+let results = calculateSalesTax(companySalesData, salesTaxRates);
 
 console.table(results);
 
