@@ -24,16 +24,17 @@ var companySalesData = [
 
 // return applicable tax rate
 function applicableTaxRate(location) {
-  switch (location) {
-    case "AB":
-      return 0.05;
-    case "BC":
-      return 0.12;
-    case "SK":
-      return 0.1;
-    default:
-      throw Erorr("Location not available");
-  }
+  return salesTaxRates[location] || 0.05;
+  // switch (location) {
+  //   case "AB":
+  //     return 0.05;
+  //   case "BC":
+  //     return 0.12;
+  //   case "SK":
+  //     return 0.1;
+  //   default:
+  //     throw Erorr("Location not available");
+  // }
 }
 
 // Totals a given sales array
